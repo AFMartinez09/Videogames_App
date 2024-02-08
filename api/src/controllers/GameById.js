@@ -6,8 +6,7 @@ const { Videogames, Genres } = require('../db');
 const videoGameById = async( id ) => {
     try {
         // API
-        id = Number(id);
-        if (typeof id === 'number' ) {
+        if (!isNaN(parseInt(id))) {
           const URL = `${API_URL}/games/${id}?key=${API_KEY}&page_size=40`;
 
           const response = await axios.get(URL);
@@ -26,7 +25,6 @@ const videoGameById = async( id ) => {
           };
           return idDataGames;
         } else {
-      
           const searchById = await Videogames.findByPk(id, {
             include: {
               model: Genres,
@@ -34,7 +32,6 @@ const videoGameById = async( id ) => {
               through: { attributes: [] },
             },
           });
-          console.log(searchById);
       
           const gameDb = {
             id: searchById.dataValues.id,

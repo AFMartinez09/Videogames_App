@@ -23,7 +23,8 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      defaultValue: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fvideo-game-controller_75524&psig=AOvVaw0xcPv6QDzLWQ9hz26-7XNg&ust=1697679454028000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKCbyvi6_oEDFQAAAAAdAAAAABAE',
+      allowNull: true,
+      defaultValue: 'https://www.flaticon.com/free-icon/video-game-controller_75524',
     },
     released: {
       type: DataTypes.DATEONLY,

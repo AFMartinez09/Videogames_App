@@ -1,11 +1,11 @@
 
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./GenderFilter.module.css";
+import styles from "./GenreFilter.module.css";
 import { AllGenres, filterGenre} from "../redux/actions/actions";
 import { useEffect, useState } from "react";
 
 
-const GenderFilter = () => {
+const GenreFilter = () => {
   const [aux, setAux] = useState(false);
 
   const genres = useSelector(state => state.genres);
@@ -22,7 +22,7 @@ const GenderFilter = () => {
   }
 
   return (
-    <div className={styles.genderFilterContainer}>
+    <div className={styles.genreFilterContainer}>
 
       <select onChange={(e)=> handleFilter(e)} defaultValue='default'>
         <option value="default" disabled >Filter by Genre</option>
@@ -38,4 +38,4 @@ const GenderFilter = () => {
   );
 };
 
-export default GenderFilter;
+export default GenreFilter;

@@ -42,9 +42,9 @@ const getAllVideoGames = async() =>{
 
 
   //findAll send information from DB
-  const dbGames = await Videogame.findAll({
+  const dbGames = await Videogames.findAll({
     include: [{
-      model: Genre,
+      model: Genres,
       attributes: ['name'],
       through: {
         attributes: []
@@ -77,7 +77,7 @@ const getAllVideoGames = async() =>{
   return allGames;
 };
 
-module.exports = getAllVideoGames;
+module.exports = {getAllVideoGames};
 
 
 

@@ -15,7 +15,7 @@ export const SET_PAGE = 'SET_PAGE';
 export const getVideogames = () => {
   return async (dispatch) => {
   // connecting my back-end route
-    const apiData = await axios.get('/videogames');
+    const apiData = await axios.get('http://localhost:3001/videogames');
     const Videogames = apiData.data;
     dispatch({
       type: GET_VIDEOGAMES,
@@ -27,7 +27,7 @@ export const getVideogames = () => {
 // get of deatil the card by id
 export const detailVideogames = (id) => {
   return async (dispatch) => {
-    const apiData = await axios.get(`/videogames/${id}`);
+    const apiData = await axios.get(`http://localhost:3001/videogames/${id}`);
     const DetailGame = apiData.data;
     dispatch({
       type: DETAIL_VIDEOGAMES,
@@ -37,10 +37,9 @@ export const detailVideogames = (id) => {
 };
 
 // get all cards by name (have the same name)
-// traigo las cartas que coincidan con el nombre ingresado
 export const searchVideogames = (name) => {
   return async (dispatch) => {
-    const apiData = await axios.get(`/videogames/name?name=${name}`);
+    const apiData = await axios.get(`http://localhost:3001/videogames/name?name=${name}`);
     const Videogames = apiData.data; 
     dispatch({
       type: SEARCH_VIDEOGAMES,
@@ -52,7 +51,7 @@ export const searchVideogames = (name) => {
 export const AllGenres = () => {
   return async (dispatch) => {
     try {
-      const apiData = await axios.get('/genres');
+      const apiData = await axios.get('http://localhost:3001/genres');
       const genres = apiData.data;
       dispatch({
         type: ALL_GENRE,

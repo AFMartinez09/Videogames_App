@@ -1,4 +1,4 @@
-const { Videogame, Genres } = require ('../db');
+const { Videogames, Genres } = require ('../db');
 
 const createVideoGame = async(
   name,
@@ -32,7 +32,7 @@ const createVideoGame = async(
       id: newGame.id,
     },
     include: [{
-      model: Genre,
+      model: Genres,
       attributes: ['name'],
       through: {
         attributes: []
@@ -43,4 +43,4 @@ const createVideoGame = async(
   return gameRelation;
 };
 
-module.exports = createVideoGame;
+module.exports = { createVideoGame };

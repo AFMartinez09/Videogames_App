@@ -2,10 +2,10 @@ const axios = require('axios');
 require('dotenv').config();
 const { API_URL, API_KEY } = process.env;
 const { Videogames, Genres } = require('../db');
-const { op } = require('sequelize');
+const { Op } = require('sequelize');
 
 const gameByName = async(name) => {
-  const URL = `${API_URL}/games?search=${name}&key=${API_KEY}&page_size=15`;
+  const URL = `${API_URL}/games?key=${API_KEY}&search=${name}&page_size=15`;
   try {
     // API
     const response = await axios.get(URL);
@@ -73,7 +73,6 @@ const gameByName = async(name) => {
     } 
     
     const totalData = apiData.concat(dbDataGames);
-    console.log(totalData.length, 'API y DB');
 
     return totalData;
   } 

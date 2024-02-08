@@ -7,9 +7,9 @@ const LandingPage = () => {
     <div className={styles.landingPageContainer}>
 
       <div className={styles.landingPageText}>
-        <p>Videogames,</p>
-        <p>some of them</p>
-        <p>are unfotgettable</p>
+        <p>VIDEOGAMES,</p>
+        <p>SOME OF THEM</p>
+        <p>ARE UNFORGETTABLE</p>
       </div>
 
       <div className={styles.landingPageButton}>

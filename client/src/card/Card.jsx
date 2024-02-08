@@ -9,18 +9,18 @@ const Card = (props) => {
     <div className={styles.cardContainer}>
 
       <div className={styles.cardImageContainer}>
-        <img src={props.image} alt='' />
+        <img src={ props.image } alt={ props.name } />
       </div>
 
       <div className={styles.cardTitle}>
         <NavLink to={`/detail/${id}`}>
-          <h3>{props.name}</h3>
+          <h3>{ props.name }</h3>
         </NavLink>
       </div>
 
       <div className={styles.cardInfo}>
-        <p>Genres: {props.genres}</p>
-        <p>Rating: {props.rating}</p>
+        <p>Genres: { props.genres }</p>
+        <p>Rating: { props.rating }</p>
       </div>
 
     </div>

@@ -55,7 +55,7 @@ const Form = () => {
     genres: [],
   })
 
-  // errores en el formularios
+  // errors forms
   const [errors, setErrors] = useState({
     name: true,
     description: true,
@@ -68,9 +68,9 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/videogames', form)
+    axios.post('http://localhost:3001/videogames', form)
       .then(res=>alert('Game created successfully'))
-      .catch(err=>alert('Please fill in all the fields'));
+      .catch(err=>{console.log(err)});
     setForm({
       name: '',
       description: '',
@@ -114,6 +114,7 @@ const Form = () => {
   }
 
   return (
+    
     <div className={styles.formContainer}>
 
       <form onSubmit={(e)=> handleSubmit(e)}>

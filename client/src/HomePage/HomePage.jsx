@@ -4,7 +4,7 @@ import SearchBar from '..//searchBar/SearchBar';
 import styles from './HomePage.module.css';
 import { useEffect, useState } from 'react';
 import { getVideogames, orderVideogamesAscDesc, orderVideogamesByRating } from '../redux/actions/actions';
-import GenderFilter from '../genderFilter/GenderFilter';
+import GenreFilter from '../genreFilter/GenreFilter';
 import Pagination from '../pagination/Pagination';
 import Card from '../card/Card';
 import PrimaryButton from '../buttons/primaryButton/PrimaryButton';
@@ -57,7 +57,7 @@ const HomePage = () => {
         <SearchBar />
 
         {/* filter by genre */}
-        <GenderFilter />
+        <GenreFilter />
         {/* alphabetic order */}
         <div className={styles.orderAscDesc}>
           <select onChange={(e)=> handleOrderAscDesc(e)}>
