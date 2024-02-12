@@ -4,7 +4,7 @@ import SearchBar from '..//searchBar/SearchBar';
 import styles from './HomePage.module.css';
 import { useEffect, useState } from 'react';
 import { getVideogames, orderVideogamesAscDesc, orderVideogamesByRating } from '../redux/actions/actions';
-import GenreFilter from '../genreFilter/GenreFilter';
+import GenreFilter from '../GenreFilter/GenreFilter';
 import Pagination from '../pagination/Pagination';
 import Card from '../card/Card';
 import PrimaryButton from '../buttons/primaryButton/PrimaryButton';
